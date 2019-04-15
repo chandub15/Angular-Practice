@@ -1,0 +1,9 @@
+
+
+
+<div *ngFor="let userDetails of users">
+    <div *ngIf="userDetails.id==user.id">
+    <p>User name is {{userDetails.name}}</p>
+    <p>Profession is {{userDetails.prof }}</p>
+    </div>
+</div>
