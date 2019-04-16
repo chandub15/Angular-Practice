@@ -2,55 +2,25 @@
         <button type="button" (click)="displaydata()" >View</button>
 
         
-        <div class= "jumbotron"> 
-          
-              <h3>
-             {{talentData.responseData[0].growth_platform}}</h3>
+        <div class="jumbotron"> 
+          <h3>{{talentData.responseData[0].growth_platform}}</h3>
             {{talentData.responseData[0].Month}}
             {{talentData.responseData[0].Year}}
-          
-          
         </div>
-        
-        <hr>
-        <h3>TalentData</h3> 
-        <div class= "jumbotron" *ngFor="let i of talentData.responseData[0].data">
-            <ul>
-              <li>{{i.Actual}}</li>
-              <li>{{i.Practice}}</li>
-              <!-- <li>{{i.1Q19 Plan}}</li> -->
-              <li>{{i.Dropped}}</li>
-              <!-- <li>{{i.Under Study}}</li> -->
-              <li>{{i.Pass}}</li>
-              <li>{{i.Fail}}</li>
-              <li>{{i.Reskilled}}</li>
-              <li>{{i.Assigned}}</li>
-              <li>{{i.Separated}}</li>
-              <!-- <li>{{i.Top Talented}}</li> -->
-              <!-- <li>{{i.Self Sufficiently}}</li> -->
-              <!-- <li>{{i.Future Proofing}}</li> -->
-              <!-- <li>{{i.Bench Management}}</li> -->
-            </ul>
+      <h1>Config</h1>
+        <div class="jumbotron">
+           <div *ngFor="let keys of keysConfig()">
+            {{keys}}:{{talentData.config[keys]}}
           </div>
-          <hr>
-          <h3>Config</h3>
-          <div class= "jumbotron">
-            <ul>
-              <li>{{talentData.config.actual}}</li>
-              <li>{{talentData.config._id}}</li>
-              <li>{{talentData.config._rev}}</li>
-              <li>{{talentData.config.Practice}}</li>
-              <!-- <li>{{talentData.config.1Q19_plan}}</li> -->
-              <li>{{talentData.config.dropped}}</li>
-              <li>{{talentData.config.under_study}}</li>
-              <li>{{talentData.config.pass}}</li>
-              <li>{{talentData.config.fail}}</li>
-              <li>{{talentData.config.reskilled}}</li>
-              <li>{{talentData.config.assigned}}</li>
-              <li>{{talentData.config.separated}}</li>
-              <!-- <li>{{talentData.config.top_talented}}</li> -->
-              <!-- <li>{{talentData.config.self_sufficiency}}</li> -->
-              <!-- <li>{{talentData.config.future_proofing}}</li> -->
-              <!-- <li>{{talentData.config.bench_management}}</li> -->
-            </ul>
-          </div>
+        </div>
+
+        <h1>Talent Data</h1>
+          <div  class="jumbotron" *ngFor="let keys of keysTalentData()">
+               <div *ngFor="let key of keysData(keys)">
+                 
+                {{key}}:{{talentData.responseData[0].data[keys][key]}}
+
+            </div>
+         </div>
+
+
