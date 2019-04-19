@@ -1,0 +1,81 @@
+
+        <button type="button" (click)="displaydata()" >View</button>
+
+
+        
+        <!-- <div class="jumbotron"> 
+          <h3>{{talentData.responseData[0].growth_platform}}</h3>
+            {{talentData.responseData[0].Month}}
+            {{talentData.responseData[0].Year}}
+        </div> -->
+        <div *ngIf="talentData">
+      <h1>Config</h1>
+        <div class="jumbotron">
+           <div *ngFor="let keys of keysConfig()">
+            {{keys}}:{{talentData.config[keys]}}
+          </div>
+        </div>
+
+        <h1>Talent Data</h1>
+          
+        <div  class="jumbotron" *ngFor="let keysResponse of keysResponseData()">
+          <div *ngFor="let keyIndex of keysResponseIndex(keysResponse)">
+            <div *ngIf="keyIndex!='data'">
+             <h5> {{keyIndex}}:{{responseData[keysResponse][keyIndex]}}     </h5> 
+            </div>          
+          </div>  
+
+          <div *ngFor="let keyIndex of keysResponseIndex(keysResponse)">
+              <div *ngIf="keyIndex=='data'">
+              <!-- {{keyIndex}} -->
+<hr>
+              <div *ngFor="let keys of keysTalentData(keysResponse)">
+              
+                <hr>
+                  <div *ngFor="let key of keysData(keys)">  
+                   {{key}}:{{responseData[keysResponse][keyIndex][keys][key]}}
+               </div>
+              </div>
+
+          </div>
+              
+              
+
+
+
+      </div>
+    </div>
+
+    <!-- <div >
+    <h1>{{urlExists}}</h1>  
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div *ngIf="keyIndex=='data'">
+          <div *ngFor="let keys of keysTalentData(keysResponse)">
+              <div *ngFor="let key of keysData(keys)">
+                
+               {{key}}:{{responseData[keysResponse][keyIndex].data[keys][key]}}
+
+           </div> -->
+
+
+
+
+
+
+
+
+
+
