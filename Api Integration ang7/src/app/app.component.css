@@ -1,0 +1,19 @@
+ .btn{
+    
+     
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 10px;
+    border-radius: 0px;
+    text-align:center;
+    
+}
+button:hover,button:focus,button:active{
+    /* color:skyblue; */
+    box-shadow: inset 0 -3px 0 0 skyblue;
+    border-bottom:0px;
+    /* border:0 0 0 3px solid skyblue;  */
+    text-decoration-color: skyblue;
+    text-align: center;
+} 

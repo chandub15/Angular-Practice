@@ -1,0 +1,47 @@
+
+<div class="container" >
+  <div class="row" >
+     <div class="col-md-1"></div> 
+    <div *ngFor="let art of arr">
+    <div class="col-sm-4 " data-category="ui">
+        <div class="lib-panel">
+            <div class="row box-shadow">
+                <div class="col-md-4">
+                    <img class="lib-img" src="{{art.srcImage}}">
+                </div>
+                <div class="col-md-5">
+                    <div class="lib-row lib-header">
+                        {{art.title}}
+                        <div class="lib-header-seperator"></div>
+                    </div>
+                    <a href="#"> <i class="material-icons">
+                      keyboard_arrow_right
+                      </i></a>
+                    <div class="lib-row lib-desc">
+                        {{art.body}}
+                   <!-- <a href="#"> <i class="material-icons">
+                          keyboard_arrow_right -->
+                          <!-- </i></a>  -->
+                          
+                          <div class="buttons">
+                            <label>{{art.date}}</label>
+                            <button type="button" class="btn btn-primary">{{art.detailsOne}}</button>
+                            <button  type="button" class="btn btn-primary">{{art.detailsTwo}}</button>
+                          </div> 
+                          <div>
+                       </div>                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- <li   class="list-group-item" *ngFor="let art of arr">
+<p>ljlknlkj{{art.srcImage}}mlkmklmlk</p>
+<img class="lib-img" src="{{art.srcImage}}">
+</li> -->
+
+

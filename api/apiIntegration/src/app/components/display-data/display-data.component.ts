@@ -10,10 +10,11 @@ import { HttpClient } from '@angular/common/http';
 export class DisplayDataComponent implements OnInit {
 
   constructor(private talentService:TalentGridServiceService,private httpClient:HttpClient) { }
-
+  dataT:string;
   ngOnInit() {
   }
  
+  index:number;
   private talentData;
 
 displaydata(){
@@ -22,9 +23,36 @@ displaydata(){
   this.talentService.getData().subscribe(data => {
       console.log(data);
       this.talentData=data;
-      console.log(this.talentData.responseData[0].growth_platform);
+      //console.log(this.talentData.config);
+       // console.log("objectabc:"+Object.keys(this.talentData.config));
+    
+      //  console.log(Object.keys(this.talentData.responseData[0].data[0]));
+
+
+
+      //this.dataT=JSON.stringify(this. talentData.responseData[0].data);
+
   });
-  console.log(this.talentData);
+ // console.log(this.talentData);
 }
 
+keysConfig() : Array<string> {
+ // console.log("array")
+  return Object.keys(this.talentData.config);
+  }
+
+  keysTalentData(): Array<string> {
+   // console.log(Object.keys(this.talentData.responseData[0].data));
+    return Object.keys(this.talentData.responseData[0].data);
+    }
+
+
+    
+  keysData(i:string): Array<string> {
+    this.index=parseInt(i);
+    // console.log(this.index);
+    // console.log(Object.keys(this.talentData.responseData[0].data[this.index]));
+    // console.log(Object.values(this.talentData.responseData[0].data[this.index]));
+    return Object.keys(this.talentData.responseData[0].data[this.index]);
+    }
 }
